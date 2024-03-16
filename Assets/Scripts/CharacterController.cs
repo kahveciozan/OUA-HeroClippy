@@ -26,10 +26,10 @@ public class CharacterController : MonoBehaviour
         animator = transform.GetComponent<Animator>();
     }
 
-    private void Start()
-    {
-        jumpSpeed = PlayerData.Instance.playerJumpSpeed;
-    }
+    // private void Start()
+    //{
+       //  jumpSpeed = PlayerData.Instance.playerJumpSpeed;
+    //}
 
 
 
