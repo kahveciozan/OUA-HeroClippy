@@ -26,10 +26,6 @@ public class CharacterController : MonoBehaviour
         animator = transform.GetComponent<Animator>();
     }
 
-    // private void Start()
-    //{
-       //  jumpSpeed = PlayerData.Instance.playerJumpSpeed;
-    //}
 
 
 
@@ -41,26 +37,29 @@ public class CharacterController : MonoBehaviour
 
     void Update()
     {
-        Move();
+        Move(PlayerData.Instance);
+
+
+
     }
 
 
 
-    private void Move()
+    private void Move(PlayerData playerData)
     {
 
-        if (isAlive == true && Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D) )
+        if (isAlive == true && (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)))
         {
 
             if (Input.GetKey(KeyCode.A))
             {
-                characterSpeed = -50;
+                characterSpeed = playerData.playerSpeed * -1;
                 spriteRenderer.flipX = true;
                 animator.SetFloat("speed", Math.Abs(characterSpeed));
             }
             else if (Input.GetKey(KeyCode.D))
             {
-                characterSpeed = 50;
+                characterSpeed = playerData.playerSpeed;
                 spriteRenderer.flipX = false;
                 animator.SetFloat("speed", Math.Abs(characterSpeed));
 
@@ -72,19 +71,23 @@ public class CharacterController : MonoBehaviour
 
 
 
-        else if (isAlive == true &&grounded == true)
+        else if (isAlive == true && grounded == true)
         {
             characterSpeed = 0;
             animator.SetFloat("speed", characterSpeed);
-
             rb.velocity = Vector2.zero;
         }
 
-        if (isAlive == true && grounded == true && Input.GetKey(KeyCode.W))
+        if (isAlive == true && grounded == true && Input.GetKey(KeyCode.W) && PlayerData.Instance.isJumpable == true)
         {
-            rb.AddForce(transform.up * jumpSpeed, ForceMode2D.Force);
 
             grounded = false;
+            PlayerData.Instance.isJumpable = false;
+
+
+            rb.AddForce(transform.up * PlayerData.Instance.playerJumpSpeed, ForceMode2D.Force);
+
+
 
         }
 
@@ -97,30 +100,28 @@ public class CharacterController : MonoBehaviour
         if (other.gameObject.tag == "zemin")
         {
             grounded = true;
+
         }
 
-        if(other.gameObject.tag == "dead")
-        {    
+        if (other.gameObject.tag == "dead")
+        {
             isAlive = false;
-            rb.velocity = Vector2.zero;
-            characterSpeed = 0;
-            transform.position = new Vector2(transform.position.x , transform.position.y);
-          //  transform.GetComponent<Collider2D>().isTrigger = true;
-            //transform.GetComponent<Rigidbody2D>().simulated = false;
-
-
-
-
-            transform.position = new Vector2(transform.position.x , transform.position.y - 0.4f);
-
             animator.SetTrigger("dead");
+            rb.simulated = false;
+            transform.GetComponent<Collider2D>().isTrigger = true;
+            rb.AddForce(new Vector2(transform.position.x,transform.position.y - 10f) , ForceMode2D.Force);
+
+            //transform.GetComponent<Collider2D>().transform.localEulerAngles = new Vector3(0, 0, -90);
+            characterSpeed = 0;
+
         }
     }
 
-    void OnColliderEnter2D(Collider2D other)
-    {
 
-    }
+
+
+
+
 
 
 

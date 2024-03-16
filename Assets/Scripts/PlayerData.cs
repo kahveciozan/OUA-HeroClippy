@@ -6,11 +6,13 @@ public class PlayerData : MonoBehaviour
 {
     public bool isWrongSide = true;
     public bool isJumpable = false;
-    
-    public int playerSpeed;
-    public int playerJumpSpeed;
-
     public int collectibleCount;
+
+    public float playerSpeed;
+    public float playerJumpSpeed;
+    public float playerScale;
+
+    public Color playerColor;
 
     public static PlayerData Instance;
 

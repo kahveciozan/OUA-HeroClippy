@@ -279,6 +279,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3165007072605819890, guid: c8b9e947d8cf89f4491035dcb0f8ec91, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 195.9592
+      objectReference: {fileID: 0}
+    - target: {fileID: 3165007072605819890, guid: c8b9e947d8cf89f4491035dcb0f8ec91, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 195.9592
+      objectReference: {fileID: 0}
     - target: {fileID: 6018000966672265365, guid: c8b9e947d8cf89f4491035dcb0f8ec91, type: 3}
       propertyPath: background
       value: 
