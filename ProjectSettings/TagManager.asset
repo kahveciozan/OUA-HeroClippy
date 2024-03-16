@@ -7,6 +7,8 @@ TagManager:
   - death
   - zemin
   - flag
+  - dead
+  - Character
   layers:
   - Default
   - TransparentFX
