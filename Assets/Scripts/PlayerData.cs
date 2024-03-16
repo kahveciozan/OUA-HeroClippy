@@ -5,12 +5,14 @@ using UnityEngine;
 public class PlayerData : MonoBehaviour
 {
     public bool isWrongSide = true;
-    public bool isJumpable = true ;
-    
-    public int playerSpeed;
-    public int playerJumpSpeed;
-
+    public bool isJumpable = false;
     public int collectibleCount;
+
+    public float playerSpeed;
+    public float playerJumpSpeed;
+    public float playerScale;
+
+    public Color playerColor;
 
     public static PlayerData Instance;
 
