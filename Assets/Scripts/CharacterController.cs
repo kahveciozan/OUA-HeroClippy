@@ -31,9 +31,6 @@ public class CharacterController : MonoBehaviour
 
 
 
-
-
-
     void FixedUpdate()
     {
 
