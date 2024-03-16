@@ -102,7 +102,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 52
+        width: 60
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -121,9 +121,9 @@ TextureImporter:
       name: flag animation_1
       rect:
         serializedVersion: 2
-        x: 61
+        x: 60
         y: 0
-        width: 38
+        width: 60
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -142,9 +142,9 @@ TextureImporter:
       name: flag animation_2
       rect:
         serializedVersion: 2
-        x: 119
+        x: 120
         y: 0
-        width: 40
+        width: 60
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -163,9 +163,9 @@ TextureImporter:
       name: flag animation_3
       rect:
         serializedVersion: 2
-        x: 177
+        x: 180
         y: 0
-        width: 47
+        width: 60
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -184,9 +184,9 @@ TextureImporter:
       name: flag animation_4
       rect:
         serializedVersion: 2
-        x: 236
+        x: 240
         y: 0
-        width: 45
+        width: 60
         height: 60
       alignment: 0
       pivot: {x: 0, y: 0}
