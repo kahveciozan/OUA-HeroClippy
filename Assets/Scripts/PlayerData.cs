@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerData : MonoBehaviour
 {
     public bool isWrongSide = true;
-    public bool isJumpable = false;
+    public bool isJumpable = true ;
     
     public int playerSpeed;
     public int playerJumpSpeed;
