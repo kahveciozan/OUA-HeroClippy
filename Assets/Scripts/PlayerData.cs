@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class PlayerData : MonoBehaviour
@@ -10,14 +9,22 @@ public class PlayerData : MonoBehaviour
 
     public float playerSpeed;
     public float playerJumpSpeed;
-    public float playerScale;
+    public Vector2 playerScale;
 
     public Color playerColor;
 
     public static PlayerData Instance;
 
+    private GameObject character;
+
+    public KeyCode A, D, W;
+
+
+
     private void Awake()
     {
+        character = GameObject.FindGameObjectWithTag("Character");
+
         if (Instance == null)
         {
             Instance = this;
@@ -28,6 +35,15 @@ public class PlayerData : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    void Start()
+    {
+
+        playerColor = character.GetComponent<CharacterController>().spriteRenderer.color;
+
+
+    }
+
+
 
 
 }

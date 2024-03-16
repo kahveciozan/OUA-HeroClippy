@@ -28,7 +28,7 @@ public class InputFieldChanger : MonoBehaviour
         string stringValue = inputField.text;
         float floatValue = float.Parse(stringValue);
         Debug.Log("PLAYER SCALE : " + floatValue);
-        PlayerData.Instance.playerScale = floatValue;
+        PlayerData.Instance.playerScale = new Vector3(floatValue,floatValue);
     }
 
 

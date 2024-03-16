@@ -6,7 +6,7 @@ public class CharacterController : MonoBehaviour
 {
 
     private Rigidbody2D rb;
-    private SpriteRenderer spriteRenderer;
+    public SpriteRenderer spriteRenderer;
     private Animator animator;
     [SerializeField] private float characterSpeed;
     [SerializeField] private float jumpSpeed;
@@ -15,6 +15,8 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private bool grounded;
 
     private bool isAlive = true;
+
+
 
 
 
@@ -30,6 +32,8 @@ public class CharacterController : MonoBehaviour
 
 
 
+
+
     void FixedUpdate()
     {
 
@@ -40,6 +44,9 @@ public class CharacterController : MonoBehaviour
     {
         Move(PlayerData.Instance);
 
+        spriteRenderer.color = PlayerData.Instance.playerColor;
+        transform.localScale = PlayerData.Instance.playerScale;
+
 
 
     }
@@ -49,23 +56,36 @@ public class CharacterController : MonoBehaviour
     private void Move(PlayerData playerData)
     {
 
-        if (isAlive == true && (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)))
+        if (isAlive == true && (Input.GetKey(PlayerData.Instance.A) || Input.GetKey(PlayerData.Instance.D)))
         {
 
-            if (Input.GetKey(KeyCode.A))
+            if (PlayerData.Instance.isWrongSide == true)
             {
                 characterSpeed = playerData.playerSpeed * -1;
                 spriteRenderer.flipX = true;
                 animator.SetFloat("speed", Math.Abs(characterSpeed));
             }
-            else if (Input.GetKey(KeyCode.D))
-            {
-                characterSpeed = playerData.playerSpeed;
-                spriteRenderer.flipX = false;
-                animator.SetFloat("speed", Math.Abs(characterSpeed));
 
+            else
+            {
+                if (Input.GetKey(PlayerData.Instance.A))
+                {
+
+                    characterSpeed = playerData.playerSpeed * -1;
+                    spriteRenderer.flipX = true;
+                    animator.SetFloat("speed", Math.Abs(characterSpeed));
+                }
+                else if (Input.GetKey(PlayerData.Instance.D))
+                {
+                    characterSpeed = playerData.playerSpeed;
+                    spriteRenderer.flipX = false;
+                    animator.SetFloat("speed", Math.Abs(characterSpeed));
+
+
+                }
 
             }
+
 
 
         }
@@ -79,14 +99,24 @@ public class CharacterController : MonoBehaviour
             rb.velocity = Vector2.zero;
         }
 
-        if (isAlive == true && grounded == true && Input.GetKey(KeyCode.W) && PlayerData.Instance.isJumpable == true)
+        if (isAlive == true && grounded == true && Input.GetKey(PlayerData.Instance.W) && PlayerData.Instance.isJumpable == true)
         {
 
-            grounded = false;
-            PlayerData.Instance.isJumpable = false;
+            if (PlayerData.Instance.isWrongSide == true)
+            {
+                characterSpeed = playerData.playerSpeed * -1;
+                spriteRenderer.flipX = true;
+                animator.SetFloat("speed", Math.Abs(characterSpeed));
+            }
+
+            else
+            {
+                grounded = false;
+                PlayerData.Instance.isJumpable = false;
+                rb.AddForce(transform.up * PlayerData.Instance.playerJumpSpeed, ForceMode2D.Force);
+            }
 
 
-            rb.AddForce(transform.up * PlayerData.Instance.playerJumpSpeed, ForceMode2D.Force);
 
 
 
@@ -108,12 +138,18 @@ public class CharacterController : MonoBehaviour
         {
             isAlive = false;
             animator.SetTrigger("dead");
-            rb.simulated = false;
+            // rb.simulated = false;
             transform.GetComponent<Collider2D>().isTrigger = true;
-            rb.AddForce(new Vector2(transform.position.x,transform.position.y - 10f) , ForceMode2D.Force);
+            rb.AddForce(transform.up * PlayerData.Instance.playerJumpSpeed, ForceMode2D.Force);
 
             //transform.GetComponent<Collider2D>().transform.localEulerAngles = new Vector3(0, 0, -90);
             characterSpeed = 0;
+
+        }
+
+        if(other.gameObject.tag == "Collectable")
+        {
+            GameManager.instance.collectableCount += 1;
 
         }
     }

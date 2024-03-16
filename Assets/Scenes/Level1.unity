@@ -1108,7 +1108,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7559465867139460238, guid: eee671576e089e948996563964a695bd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.362
+      value: 1.56
       objectReference: {fileID: 0}
     - target: {fileID: 7559465867139460238, guid: eee671576e089e948996563964a695bd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4267,13 +4267,14 @@ MonoBehaviour:
   isWrongSide: 1
   isJumpable: 0
   collectibleCount: 0
-  playerSpeed: 100
-  playerJumpSpeed: 600
+  playerSpeed: 0
+  playerJumpSpeed: 0
   playerScale: {x: 5, y: 5}
   playerColor: {r: 1, g: 1, b: 1, a: 0}
   A: 97
   D: 100
   W: 119
+  SPACE: 32
 --- !u!4 &1936520273
 Transform:
   m_ObjectHideFlags: 0
