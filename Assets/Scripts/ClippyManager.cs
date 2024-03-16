@@ -30,4 +30,6 @@ public class ClippyManager : MonoBehaviour
         tablet.anchoredPosition = new Vector2(tablet.anchoredPosition.x, yPos);
         openButton.SetActive(true);
     }
+
+    
 }
