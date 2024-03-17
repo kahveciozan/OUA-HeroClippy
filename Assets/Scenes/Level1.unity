@@ -1305,7 +1305,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 32.05
+  m_fontSize: 26.45
   m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1439,7 +1439,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 37.55
+  m_fontSize: 27.4
   m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1573,7 +1573,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 27.95
+  m_fontSize: 25.25
   m_fontSizeBase: 13.23
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2457,6 +2457,7 @@ GameObject:
   - component: {fileID: 1104767487}
   - component: {fileID: 1104767486}
   - component: {fileID: 1104767489}
+  - component: {fileID: 1104767490}
   m_Layer: 5
   m_Name: InputField (TMP)
   m_TagString: Untagged
@@ -2481,8 +2482,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 106.5, y: 3.4}
-  m_SizeDelta: {x: 89.5893, y: 43.4384}
+  m_AnchoredPosition: {x: 87.4, y: 3.4}
+  m_SizeDelta: {x: 73.8549, y: 35.8094}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1104767486
 MonoBehaviour:
@@ -2542,7 +2543,7 @@ MonoBehaviour:
   m_CharacterValidation: 3
   m_RegexValue: 
   m_GlobalPointSize: 14
-  m_CharacterLimit: 0
+  m_CharacterLimit: 3
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls:
@@ -2642,6 +2643,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ce4bc0cd3a41f24587a7d6ed341725e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1104767490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104767484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6753bf69994530a47a741800843c4fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1195778577
@@ -3107,6 +3120,7 @@ GameObject:
   - component: {fileID: 1447165928}
   - component: {fileID: 1447165927}
   - component: {fileID: 1447165930}
+  - component: {fileID: 1447165931}
   m_Layer: 5
   m_Name: Dropdown
   m_TagString: Untagged
@@ -3134,7 +3148,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 156.9, y: 57}
-  m_SizeDelta: {x: 168.6049, y: 57.5819}
+  m_SizeDelta: {x: 152.6723, y: 52.1406}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1447165927
 MonoBehaviour:
@@ -3264,6 +3278,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df0c464e2667dca4c8c850e26200dc9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1447165931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1447165925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90791ee613f0cb84594d6244d2fab7e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropdown: {fileID: 826070155}
 --- !u!1 &1471156713
 GameObject:
   m_ObjectHideFlags: 0
@@ -3277,6 +3304,7 @@ GameObject:
   - component: {fileID: 1471156716}
   - component: {fileID: 1471156715}
   - component: {fileID: 1471156718}
+  - component: {fileID: 1471156719}
   m_Layer: 5
   m_Name: InputField (TMP) (1)
   m_TagString: Untagged
@@ -3301,8 +3329,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 93.3, y: -50.5}
-  m_SizeDelta: {x: 57.674, y: 45.9307}
+  m_AnchoredPosition: {x: 70.00002, y: -51.5}
+  m_SizeDelta: {x: 42.0902, y: 33.52}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1471156715
 MonoBehaviour:
@@ -3362,7 +3390,7 @@ MonoBehaviour:
   m_CharacterValidation: 3
   m_RegexValue: 
   m_GlobalPointSize: 14
-  m_CharacterLimit: 0
+  m_CharacterLimit: 2
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls:
@@ -3462,6 +3490,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ce4bc0cd3a41f24587a7d6ed341725e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1471156719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1471156713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f2cf902b9bf87f4aba21ed122429cff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1601543973
@@ -4431,11 +4471,11 @@ PrefabInstance:
         =                          ;
 
 
-        private float  jumpForce =              
+        private int  jumpForce =             
         ;
 
 
-        private float playerScale =          ;
+        private int playerScale =        ;
 
 
         Start()
