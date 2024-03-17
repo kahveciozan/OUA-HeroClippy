@@ -35,5 +35,30 @@ public class InputFieldChanger : MonoBehaviour
         PlayerData.Instance.playerScale = new Vector3(floatValue,floatValue);
     }
 
+    //Change Platform Speed
+    public void ChangePlatformSpeed()
+    {
+        string stringValue = inputField.text;
+        Debug.Log("PLATFORM 1 Speed : " + stringValue);
+
+        //PlatformManager.Instance.platformSpeed = floatValue;
+    }
+
+
+    //Cahange Platform 1 Direction
+    public void ChangePlatform1Direction()
+    {
+        string stringValue = inputField.text;
+        Debug.Log("PLATFORM 1 DIRECTION : " + stringValue);
+        //PlatformManager.Instance.platform1Direction = floatValue;
+    }
+
+    //Change Platform 2 Direction
+    public void ChangePlatform2Direction()
+    {
+        string stringValue = inputField.text;
+        Debug.Log("PLATFORM 2 DIRECTION : " + stringValue);
+        //PlatformManager.Instance.platform2Direction = floatValue;
+    }
 
 }
