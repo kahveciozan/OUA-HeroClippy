@@ -41,7 +41,8 @@ public class InputFieldChanger : MonoBehaviour
         string stringValue = inputField.text;
         Debug.Log("PLATFORM 1 Speed : " + stringValue);
 
-        //PlatformManager.Instance.platformSpeed = floatValue;
+        float floatValue = float.Parse(stringValue);
+        PlayerData.Instance.platformSpeed2 = floatValue;
     }
 
 
@@ -50,7 +51,9 @@ public class InputFieldChanger : MonoBehaviour
     {
         string stringValue = inputField.text;
         Debug.Log("PLATFORM 1 DIRECTION : " + stringValue);
-        //PlatformManager.Instance.platform1Direction = floatValue;
+
+
+        PlayerData.Instance.platformDirection1 = stringValue;
     }
 
     //Change Platform 2 Direction
@@ -58,7 +61,9 @@ public class InputFieldChanger : MonoBehaviour
     {
         string stringValue = inputField.text;
         Debug.Log("PLATFORM 2 DIRECTION : " + stringValue);
-        //PlatformManager.Instance.platform2Direction = floatValue;
+
+        PlayerData.Instance.platformDirection2 = stringValue;
+
     }
 
 }

@@ -36,7 +36,7 @@ public class Platform : MonoBehaviour
 
     
 
-        anim.speed = PlayerData.Instance.platformSpeed1;
+        anim.speed = PlayerData.Instance.platformSpeed1 / 10;
 
     }
 
