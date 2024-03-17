@@ -11026,8 +11026,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 990161258189534392, guid: 069557b2a38aafb48b8d02475f047cfb, type: 3}
+      propertyPath: platformSpeed1
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 990161258189534392, guid: 069557b2a38aafb48b8d02475f047cfb, type: 3}
+      propertyPath: platformSpeed2
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 990161258189534392, guid: 069557b2a38aafb48b8d02475f047cfb, type: 3}
       propertyPath: playerJumpSpeed
       value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 990161258189534392, guid: 069557b2a38aafb48b8d02475f047cfb, type: 3}
+      propertyPath: platformDirection1
+      value: Horizontal
+      objectReference: {fileID: 0}
+    - target: {fileID: 990161258189534392, guid: 069557b2a38aafb48b8d02475f047cfb, type: 3}
+      propertyPath: platformDirection2
+      value: Vertical
       objectReference: {fileID: 0}
     - target: {fileID: 1045335777662007346, guid: 069557b2a38aafb48b8d02475f047cfb, type: 3}
       propertyPath: m_LocalPosition.x

@@ -16,6 +16,6 @@ public class GetPlatform2Speed : MonoBehaviour
 
     void InityPlatform2Speed()
     {
-        //jumpForceInputField.text = PlatformManager.Instance.platformSpeed.ToString();
+        jumpForceInputField.text = PlayerData.Instance.platformSpeed2.ToString();
     }
 }

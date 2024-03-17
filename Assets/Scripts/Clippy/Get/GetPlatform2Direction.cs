@@ -16,6 +16,6 @@ public class GetPlatform2Direction : MonoBehaviour
 
     void InityPlatform2Direction()
     {
-        //jumpForceInputField.text = PlatformManager.Instance.platform2Direction.ToString();
+        jumpForceInputField.text = PlayerData.Instance.platformDirection2;
     }
 }
