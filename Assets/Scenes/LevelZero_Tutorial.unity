@@ -1471,7 +1471,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1620754456605012265, guid: 589c45bcd39de034cabcb6287f999caa, type: 3}
       propertyPath: m_Name
-      value: flag animation_0 (1)
+      value: Flag
       objectReference: {fileID: 0}
     - target: {fileID: 7386138873435279256, guid: 589c45bcd39de034cabcb6287f999caa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5323,6 +5323,10 @@ PrefabInstance:
     - target: {fileID: 990161258189534392, guid: 069557b2a38aafb48b8d02475f047cfb, type: 3}
       propertyPath: isWrongSide
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 990161258189534392, guid: 069557b2a38aafb48b8d02475f047cfb, type: 3}
+      propertyPath: playerJumpSpeed
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 1045335777662007346, guid: 069557b2a38aafb48b8d02475f047cfb, type: 3}
       propertyPath: m_LocalPosition.x

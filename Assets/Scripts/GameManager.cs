@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance;
 
-    public int gameLevel;
+    public int gameLevel = 0;
     public int collectableCount;
 
     public TextMeshProUGUI tmp_gameLevel;
@@ -65,4 +65,6 @@ public class GameManager : MonoBehaviour
     {
 
     }
+
+
 }
