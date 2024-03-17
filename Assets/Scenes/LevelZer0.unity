@@ -2490,7 +2490,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -10122,14 +10122,14 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5178477424043343348, guid: 334c928ed0dfa6a43b90ffb6bc4a231d, type: 3}
-      insertIndex: 2
-      addedObject: {fileID: 307220905}
+      insertIndex: 1
+      addedObject: {fileID: 499074880}
     - targetCorrespondingSourceObject: {fileID: 5178477424043343348, guid: 334c928ed0dfa6a43b90ffb6bc4a231d, type: 3}
       insertIndex: 3
-      addedObject: {fileID: 752568884}
+      addedObject: {fileID: 307220905}
     - targetCorrespondingSourceObject: {fileID: 5178477424043343348, guid: 334c928ed0dfa6a43b90ffb6bc4a231d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 499074880}
+      insertIndex: 4
+      addedObject: {fileID: 752568884}
     - targetCorrespondingSourceObject: {fileID: 2236698839971351802, guid: 334c928ed0dfa6a43b90ffb6bc4a231d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 966706620}
