@@ -53,39 +53,62 @@ public class CharacterController : MonoBehaviour
     private void Move(PlayerData playerData)
     {
 
-        if (isAlive == true && (Input.GetKey(PlayerData.Instance.A) || Input.GetKey(PlayerData.Instance.D)))
+        if (isAlive == true && (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)))
         {
 
-            if (PlayerData.Instance.isWrongSide == true)
+            /*if (PlayerData.Instance.isWrongSide == true)
             {
                 characterSpeed = playerData.playerSpeed * -1;
                 spriteRenderer.flipX = true;
                 animator.SetFloat("speed", Math.Abs(characterSpeed));
-            }
+            }*/
 
-            else
+
+            if (Input.GetKey(KeyCode.A))
             {
-                if (Input.GetKey(PlayerData.Instance.A))
+                if (playerData.A == KeyCode.A)
                 {
-
                     characterSpeed = playerData.playerSpeed * -1;
                     spriteRenderer.flipX = true;
                     animator.SetFloat("speed", Math.Abs(characterSpeed));
                 }
-                else if (Input.GetKey(PlayerData.Instance.D))
+
+                else
+                {
+                    characterSpeed = playerData.playerSpeed;
+
+                    spriteRenderer.flipX = false;
+                    animator.SetFloat("speed", Math.Abs(characterSpeed));
+                }
+
+            }
+            else if (Input.GetKey(KeyCode.D))
+            {
+                if (playerData.D == KeyCode.A)
+                {
+                    characterSpeed = playerData.playerSpeed * -1;
+                    spriteRenderer.flipX = true;
+                    animator.SetFloat("speed", Math.Abs(characterSpeed));
+                }
+
+                else
                 {
                     characterSpeed = playerData.playerSpeed;
                     spriteRenderer.flipX = false;
                     animator.SetFloat("speed", Math.Abs(characterSpeed));
-
-
                 }
+
+
 
             }
 
 
 
         }
+
+
+
+
 
 
 
@@ -96,21 +119,23 @@ public class CharacterController : MonoBehaviour
             rb.velocity = Vector2.zero;
         }
 
-        if (isAlive == true && grounded == true && Input.GetKey(PlayerData.Instance.W) && PlayerData.Instance.isJumpable == true)
+        if (isAlive == true && grounded == true && Input.GetKey(KeyCode.W) && PlayerData.Instance.isJumpable == true)
         {
 
-            if (PlayerData.Instance.isWrongSide == true)
+            if (playerData.W == KeyCode.W)
             {
-                characterSpeed = playerData.playerSpeed * -1;
-                spriteRenderer.flipX = true;
-                animator.SetFloat("speed", Math.Abs(characterSpeed));
-            }
 
-            else
-            {
                 grounded = false;
                 PlayerData.Instance.isJumpable = false;
                 rb.AddForce(transform.up * PlayerData.Instance.playerJumpSpeed, ForceMode2D.Force);
+            }
+
+            else
+            {   
+                characterSpeed = playerData.playerSpeed * -1;
+                spriteRenderer.flipX = true;
+                animator.SetFloat("speed", Math.Abs(characterSpeed));
+
             }
 
 
@@ -144,7 +169,7 @@ public class CharacterController : MonoBehaviour
 
         }
 
-        if(other.gameObject.tag == "Collectable")
+        if (other.gameObject.tag == "Collectable")
         {
             GameManager.instance.collectableCount += 1;
 
