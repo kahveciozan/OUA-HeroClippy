@@ -19,6 +19,8 @@ public class CharacterController : MonoBehaviour
 
     private bool isAlive = true;
 
+    public AudioManager audioManager;
+
     //[SerializeField] Transform particlePoint;
     //[SerializeField] GameObject runParticle;
 
@@ -38,6 +40,11 @@ public class CharacterController : MonoBehaviour
         animator = transform.GetComponent<Animator>();
     }
 
+
+    void Start()
+    {
+        audioManager.bgMusic.Play();
+    }
 
     void FixedUpdate()
     {
@@ -126,6 +133,8 @@ public class CharacterController : MonoBehaviour
                 grounded = false;
                 PlayerData.Instance.isJumpable = false;
                 rb.AddForce(transform.up * PlayerData.Instance.playerJumpSpeed, ForceMode2D.Force);
+
+                audioManager.jump.Play();
             }
 
             else
@@ -151,12 +160,28 @@ public class CharacterController : MonoBehaviour
         {
             isAlive = false;
             animator.SetTrigger("dead");
-            // rb.simulated = false;
             transform.GetComponent<Collider2D>().isTrigger = true;
             rb.AddForce(transform.up * PlayerData.Instance.playerJumpSpeed, ForceMode2D.Force);
-
-            //transform.GetComponent<Collider2D>().transform.localEulerAngles = new Vector3(0, 0, -90);
             characterSpeed = 0;
+
+
+            audioManager.bgMusic.Stop();
+            audioManager.death.Play();
+
+
+            StartCoroutine(GameManager.instance.Death());
+
+        }
+
+
+        if (other.gameObject.tag == "fallDeath")
+        {
+            isAlive = false;
+            animator.SetTrigger("dead");
+            transform.GetComponent<Collider2D>().isTrigger = true;
+            //rb.AddForce(transform.up * PlayerData.Instance.playerJumpSpeed, ForceMode2D.Force);
+            characterSpeed = 0;
+
 
             if (isFirstDie)
             {
@@ -173,6 +198,12 @@ public class CharacterController : MonoBehaviour
 
 
 
+            audioManager.bgMusic.Stop();
+            audioManager.fallDeath.Play();
+
+
+
+            StartCoroutine(GameManager.instance.Death());
 
         }
 

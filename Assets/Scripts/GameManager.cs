@@ -1,5 +1,7 @@
 
 using System;
+using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -11,11 +13,11 @@ public class GameManager : MonoBehaviour
 
     public int gameLevel = 0;
 
-    public Image cursor;
-   // public int collectableCount;
+    public Image cursorParent, cursorIdle, cursorRight, cursorLeft;
+    // public int collectableCount;
 
-   // public TextMeshProUGUI tmp_gameLevel;
-  //  public TextMeshProUGUI tmp_collectableCount;
+    // public TextMeshProUGUI tmp_gameLevel;
+    //  public TextMeshProUGUI tmp_collectableCount;
 
 
 
@@ -29,6 +31,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+
+
         if (gameLevel == 0)
         {
             //SceneManager.LoadScene(0);
@@ -54,24 +58,46 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         //tmp_gameLevel.text = "LEVEL : " + gameLevel;
-       // tmp_collectableCount.text = "" + collectableCount;
-       if(Input.GetKeyDown(KeyCode.Space))
-       {
-          Debug.Log(Input.mousePosition);
+        // tmp_collectableCount.text = "" + collectableCount;
 
-       }
 
-          cursor.transform.position = new Vector2(Input.mousePosition.x , Input.mousePosition.y);
+
+
+        if (Input.GetAxis("Mouse X") > 0)
+        {
+
+            cursorParent.transform.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y - 45f);
+
+            cursorRight.gameObject.SetActive(true);
+            cursorLeft.gameObject.SetActive(false);
+            cursorIdle.gameObject.SetActive(false);
+
+
+        }
+
+        else if (Input.GetAxis("Mouse X") < 0)
+        {
+
+            cursorParent.transform.position = new Vector2(Input.mousePosition.x + 15, Input.mousePosition.y - 45f);
+
+            cursorRight.gameObject.SetActive(false);
+            cursorLeft.gameObject.SetActive(true);
+            cursorIdle.gameObject.SetActive(false);
+        }
+
+
 
     }
 
 
-   
 
-    public void Death()
+
+    public IEnumerator Death()
     {
-        Debug.Log("ara");
-       SceneManager.LoadScene(gameLevel);
+        SceneManager.LoadScene(gameLevel);
+
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene(gameLevel);
     }
 
 
