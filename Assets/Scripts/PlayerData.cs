@@ -19,6 +19,15 @@ public class PlayerData : MonoBehaviour
 
     public KeyCode A, D, W;
 
+    public float platformSpeed1;
+    public string platformDirection1;
+    public float platformSpeed2;
+
+    public string platformDirection2;
+
+
+
+
 
 
     private void Awake()
@@ -39,10 +48,7 @@ public class PlayerData : MonoBehaviour
 
     void Start()
     {
-
         playerColor = character.GetComponent<CharacterController>().spriteRenderer.color;
-
-
     }
 
 
