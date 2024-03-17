@@ -37,7 +37,7 @@ public class ClippyManager : MonoBehaviour
 
     IEnumerator WaitForAnimation()
     {
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(0.8f);
         openButton.SetActive(true);
         RestartTheScene();
 
