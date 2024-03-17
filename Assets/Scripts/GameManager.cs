@@ -94,6 +94,8 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator Death()
     {
+        SceneManager.LoadScene(gameLevel);
+
         yield return new WaitForSeconds(3);
         SceneManager.LoadScene(gameLevel);
     }
