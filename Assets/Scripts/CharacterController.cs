@@ -183,10 +183,6 @@ public class CharacterController : MonoBehaviour
                 CutSceneStart?.Invoke();
 
             }
-
-
-
-
         }
 
 

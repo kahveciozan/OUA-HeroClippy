@@ -8,6 +8,7 @@ public class Flag : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        
         if (collision.gameObject.CompareTag("Character"))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
