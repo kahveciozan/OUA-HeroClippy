@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
 
+        Cursor.visible = false;
 
         if (gameLevel == 0)
         {
