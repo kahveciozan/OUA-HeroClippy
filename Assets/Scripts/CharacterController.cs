@@ -169,7 +169,23 @@ public class CharacterController : MonoBehaviour
             audioManager.death.Play();
 
 
-            StartCoroutine(GameManager.instance.Death());
+            if (isFirstDie)
+            {
+                StartCoroutine(GameManager.instance.Death());
+                Debug.Log("1");
+            }
+            else
+            {
+                Debug.Log("2");
+
+                isFirstDie = true;
+
+                CutSceneStart?.Invoke();
+
+            }
+
+
+
 
         }
 
@@ -181,22 +197,6 @@ public class CharacterController : MonoBehaviour
             transform.GetComponent<Collider2D>().isTrigger = true;
             //rb.AddForce(transform.up * PlayerData.Instance.playerJumpSpeed, ForceMode2D.Force);
             characterSpeed = 0;
-
-
-            if (isFirstDie)
-            {
-                GameManager.instance.Death();
-
-            }
-            else
-            {
-                isFirstDie = true;
-
-                CutSceneStart?.Invoke();
-
-            }
-
-
 
             audioManager.bgMusic.Stop();
             audioManager.fallDeath.Play();

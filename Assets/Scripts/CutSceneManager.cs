@@ -106,7 +106,7 @@ public class CutSceneManager : MonoBehaviour
         gameDesigner.SetActive(false);
         dialog7.SetActive(false);
         clippy.SetActive(true);
-        GameManager.instance.Death();
+        StartCoroutine(GameManager.instance.Death());
 
     }
 }
