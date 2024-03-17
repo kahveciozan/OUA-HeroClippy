@@ -4649,6 +4649,10 @@ PrefabInstance:
       propertyPath: m_VerticalAlignment
       value: 256
       objectReference: {fileID: 0}
+    - target: {fileID: 3824362069781667786, guid: 334c928ed0dfa6a43b90ffb6bc4a231d, type: 3}
+      propertyPath: m_fontSize
+      value: 34.05
+      objectReference: {fileID: 0}
     - target: {fileID: 5178477424043343348, guid: 334c928ed0dfa6a43b90ffb6bc4a231d, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -4736,6 +4740,9 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 5178477424043343348, guid: 334c928ed0dfa6a43b90ffb6bc4a231d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1817771098}
     - targetCorrespondingSourceObject: {fileID: 2236698839971351802, guid: 334c928ed0dfa6a43b90ffb6bc4a231d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1447165926}
