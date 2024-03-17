@@ -1,7 +1,7 @@
 
-using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,10 +9,12 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     public int gameLevel = 0;
-    public int collectableCount;
 
-    public TextMeshProUGUI tmp_gameLevel;
-    public TextMeshProUGUI tmp_collectableCount;
+    public Image cursor;
+   // public int collectableCount;
+
+   // public TextMeshProUGUI tmp_gameLevel;
+  //  public TextMeshProUGUI tmp_collectableCount;
 
 
 
@@ -50,20 +52,37 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        tmp_gameLevel.text = "LEVEL : " + gameLevel;
-        tmp_collectableCount.text = "" + collectableCount;
+        //tmp_gameLevel.text = "LEVEL : " + gameLevel;
+       // tmp_collectableCount.text = "" + collectableCount;
+       if(Input.GetKeyDown(KeyCode.Space))
+       {
+          Debug.Log(Input.mousePosition);
+
+       }
+
+          cursor.transform.position = new Vector2(Input.mousePosition.x , Input.mousePosition.y);
 
     }
 
 
-    public void Win()
-    {
+   
 
+    public void Death()
+    {
+       SceneManager.LoadScene(gameLevel);
     }
 
-    public void Lose()
-    {
 
+    public void NextLevel()
+    {
+        gameLevel++;
+        SceneManager.LoadScene(gameLevel);
+    }
+
+    //Quit the game
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 
 

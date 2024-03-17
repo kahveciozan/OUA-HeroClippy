@@ -16,6 +16,11 @@ public class CharacterController : MonoBehaviour
 
     private bool isAlive = true;
 
+    //[SerializeField] Transform particlePoint;
+    //[SerializeField] GameObject runParticle;
+
+
+
 
 
 
@@ -29,11 +34,8 @@ public class CharacterController : MonoBehaviour
     }
 
 
-
-
     void FixedUpdate()
     {
-
         rb.velocity = new Vector2(characterSpeed * Time.deltaTime, rb.velocity.y);
     }
 
@@ -43,9 +45,6 @@ public class CharacterController : MonoBehaviour
 
         spriteRenderer.color = PlayerData.Instance.playerColor;
         transform.localScale = PlayerData.Instance.playerScale;
-
-
-
     }
 
 
@@ -71,6 +70,9 @@ public class CharacterController : MonoBehaviour
                     characterSpeed = playerData.playerSpeed * -1;
                     spriteRenderer.flipX = true;
                     animator.SetFloat("speed", Math.Abs(characterSpeed));
+
+                    //  GameObject particle = Instantiate(runParticle, particlePoint.position, Quaternion.identity, null);
+                    // Destroy(particle, 0.2f);
                 }
 
                 else
@@ -82,6 +84,7 @@ public class CharacterController : MonoBehaviour
                 }
 
             }
+
             else if (Input.GetKey(KeyCode.D))
             {
                 if (playerData.D == KeyCode.A)
@@ -97,18 +100,9 @@ public class CharacterController : MonoBehaviour
                     spriteRenderer.flipX = false;
                     animator.SetFloat("speed", Math.Abs(characterSpeed));
                 }
-
-
-
             }
 
-
-
         }
-
-
-
-
 
 
 
@@ -116,7 +110,6 @@ public class CharacterController : MonoBehaviour
         {
             characterSpeed = 0;
             animator.SetFloat("speed", characterSpeed);
-            rb.velocity = Vector2.zero;
         }
 
         if (isAlive == true && grounded == true && Input.GetKey(KeyCode.W) && PlayerData.Instance.isJumpable == true)
@@ -131,20 +124,13 @@ public class CharacterController : MonoBehaviour
             }
 
             else
-            {   
+            {
                 characterSpeed = playerData.playerSpeed * -1;
                 spriteRenderer.flipX = true;
                 animator.SetFloat("speed", Math.Abs(characterSpeed));
 
             }
-
-
-
-
-
         }
-
-
     }
 
 
@@ -167,11 +153,15 @@ public class CharacterController : MonoBehaviour
             //transform.GetComponent<Collider2D>().transform.localEulerAngles = new Vector3(0, 0, -90);
             characterSpeed = 0;
 
+            GameManager.instance.Death();
+
+
+
         }
 
         if (other.gameObject.tag == "Collectable")
         {
-            GameManager.instance.collectableCount += 1;
+            //  GameManager.instance.collectableCount += 1;
 
         }
     }
