@@ -11,6 +11,7 @@ public class Flag : MonoBehaviour
         if (collision.gameObject.CompareTag("Character"))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            GameManager.instance.gameLevel += 1;
             Debug.Log("NEXT LEVEL");
         }
 
