@@ -47,4 +47,67 @@ public class DropdownValueChanger : MonoBehaviour
         PlayerData.Instance.playerColor = color;
         Debug.Log("PLAYER COLOR : " + color);
     }
+
+    // Change Key A
+    public void ChangeKeyA()
+    {
+        string keyName = dropdown.options[dropdown.value].text;
+        KeyCode key = KeyCode.None;
+        switch (keyName)
+        {
+            case "A":
+                key = KeyCode.A;
+                break;
+            case "D":
+                key = KeyCode.D;
+                break;
+            case "W":
+                key = KeyCode.W;
+                break;
+        }
+        PlayerData.Instance.A = key;
+        Debug.Log("PLAYER KEY A : " + key);
+    }
+
+    // Change Key D
+    public void ChangeKeyD()
+    {
+        string keyName = dropdown.options[dropdown.value].text;
+        KeyCode key = KeyCode.None;
+        switch (keyName)
+        {
+            case "A":
+                key = KeyCode.A;
+                break;
+            case "D":
+                key = KeyCode.D;
+                break;
+            case "W":
+                key = KeyCode.W;
+                break;
+        }
+        PlayerData.Instance.D = key;
+        Debug.Log("PLAYER KEY D : " + key);
+    }
+
+    // Change Key W
+    public void ChangeKeyW()
+    {
+        string keyName = dropdown.options[dropdown.value].text;
+        KeyCode key = KeyCode.None;
+        switch (keyName)
+        {
+            case "A":
+                key = KeyCode.A;
+                break;
+            case "D":
+                key = KeyCode.D;
+                break;
+            case "W":
+                key = KeyCode.W;
+                break;
+        }
+        PlayerData.Instance.W = key;
+        Debug.Log("PLAYER KEY W : " + key);
+    }
 }
