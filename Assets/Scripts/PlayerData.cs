@@ -35,6 +35,8 @@ public class PlayerData : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+
     void Start()
     {
 

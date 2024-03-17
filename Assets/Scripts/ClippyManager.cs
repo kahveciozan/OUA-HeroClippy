@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ClippyManager : MonoBehaviour
 {
@@ -38,7 +39,15 @@ public class ClippyManager : MonoBehaviour
     {
         yield return new WaitForSeconds(0.4f);
         openButton.SetActive(true);
+        RestartTheScene();
 
+    }
+
+
+    // Restart Active Scene
+    public void RestartTheScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
 
