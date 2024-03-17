@@ -17,6 +17,7 @@ public class GetInputValues : MonoBehaviour
 
     private void InitInputValues()
     {
+        Debug.Log("A:" +PlayerData.Instance.A.ToString());
         inputA.text = PlayerData.Instance.A.ToString();
         inputD.text = PlayerData.Instance.D.ToString();
         inputW.text = PlayerData.Instance.W.ToString();

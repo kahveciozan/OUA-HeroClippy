@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
+    private static bool isFirstDie = false;
+    public static event Action CutSceneStart;
+
 
     private Rigidbody2D rb;
     public SpriteRenderer spriteRenderer;
@@ -28,6 +31,8 @@ public class CharacterController : MonoBehaviour
 
     void Awake()
     {
+        CutSceneStart = null;
+
         rb = transform.GetComponent<Rigidbody2D>();
         spriteRenderer = transform.GetComponent<SpriteRenderer>();
         animator = transform.GetComponent<Animator>();
@@ -153,7 +158,19 @@ public class CharacterController : MonoBehaviour
             //transform.GetComponent<Collider2D>().transform.localEulerAngles = new Vector3(0, 0, -90);
             characterSpeed = 0;
 
-            GameManager.instance.Death();
+            if (isFirstDie)
+            {
+                GameManager.instance.Death();
+
+            }
+            else
+            {
+                isFirstDie = true;
+
+                CutSceneStart?.Invoke();
+
+            }
+
 
 
 

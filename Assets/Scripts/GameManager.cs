@@ -1,4 +1,5 @@
 
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -69,6 +70,7 @@ public class GameManager : MonoBehaviour
 
     public void Death()
     {
+        Debug.Log("ara");
        SceneManager.LoadScene(gameLevel);
     }
 
